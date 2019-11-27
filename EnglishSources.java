@@ -22,11 +22,10 @@ class EnglishSources {
 		for(int i = 0; i < letters.length; i++) { // check each word < letterCnt
 			if(!(Character.isWhitespace(letters[i]))) {
 				tempWord += letters[i];
+			} else if((Character.isWhitespace(letters[i]) || (i == letters.length-1))) { // fix
 				if(tempWord.length() > 93) {
 					out.print("ERROR: No words longer than 93 charters. Please try again.");
 					checkLength();
-				} else {
-					tempWord = "";
 				}
 			}
 		}

@@ -73,7 +73,7 @@ class EnglishSources {
 		displaySources(sources);
 	}
 
-	public static void UI() {
+	public static void directions() {
 		int num = 0;
 
 		out.println("DIRECTIONS: Your font MUST be Calibri Body with a font size of 12.");
@@ -82,7 +82,7 @@ class EnglishSources {
 			num = scan.nextInt();
 		} catch(Exception e) {
 			out.println("\nERROR: Please only type numbers!\n");
-			UI();
+			directions();
 		}
 
 		if(num > 1) {
@@ -94,6 +94,6 @@ class EnglishSources {
 	}
 
 	public static void main(String[] args) {
-		UI();
+		directions();
 	}
 }

@@ -14,7 +14,7 @@ class EnglishSources {
 		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brin O.");
 	}
 
-	static String checkLength() {
+	static String checkLength() { // fix
 		String str = scan.nextLine();
 		String tempWord = "";
 		char[] letters = str.toCharArray();
@@ -22,11 +22,12 @@ class EnglishSources {
 		for(int i = 0; i < letters.length; i++) { // check each word < letterCnt
 			if(!(Character.isWhitespace(letters[i]))) {
 				tempWord += letters[i];
-			} else if((Character.isWhitespace(letters[i]) || (i == letters.length-1))) { // fix
-				if(tempWord.length() > 93) {
-					out.print("ERROR: No words longer than 93 charters. Please try again.");
-					checkLength();
-				}
+			}
+
+			if(tempWord.length() > 93) {
+				tempWord = "";
+				out.print("ERROR: No words longer than 93 charters. Please reenter your source. ");
+				checkLength();
 			}
 		}
 		return str;

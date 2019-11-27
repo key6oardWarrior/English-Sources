@@ -24,6 +24,7 @@ class EnglishSources {
 				tempWord += letters[i];
 				if(tempWord.length() > 93) {
 					out.print("ERROR: No words longer than 93 charters. Please try again.");
+					checkLength();
 				} else {
 					tempWord = "";
 				}

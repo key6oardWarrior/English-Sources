@@ -34,7 +34,7 @@ class EnglishSources {
 	}
 
 	static void organizeSources(int sourceNum) {
-		ArrayList<String> sources = new ArrayList<String>();
+		ArrayList<String> sources = new ArrayList<String>(); // think about using dictionary to reduce time complexity
 		int letterCnt = 93;
 		String temp, copy = "";
 		String txt = "";

@@ -82,7 +82,7 @@ class EnglishSources {
 			num = scan.nextInt();
 		} catch(Exception e) {
 			out.println("\nERROR: Please only type numbers!\n");
-			directions();
+			giveDirections();
 		}
 
 		if(num > 1) {
@@ -94,6 +94,6 @@ class EnglishSources {
 	}
 
 	public static void main(String[] args) {
-		rections();
+		giveDirections();
 	}
 }

@@ -11,7 +11,7 @@ class EnglishSources {
 			out.println(sources.get(i) + "\n");
 			sources.remove(i+1);
 		}
-		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brin O.");
+		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brian O.");
 	}
 
 	static String checkLength() { // fix

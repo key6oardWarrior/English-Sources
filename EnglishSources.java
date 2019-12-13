@@ -73,7 +73,7 @@ class EnglishSources {
 		displaySources(sources);
 	}
 
-	public static void directions() {
+	public static void giveDirections() {
 		int num = 0;
 
 		out.println("DIRECTIONS: Your font MUST be Calibri Body with a font size of 12.");
@@ -94,6 +94,6 @@ class EnglishSources {
 	}
 
 	public static void main(String[] args) {
-		directions();
+		rections();
 	}
 }

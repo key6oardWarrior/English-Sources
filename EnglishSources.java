@@ -14,7 +14,7 @@ class EnglishSources {
 		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brian O.");
 	}
 
-	static String checkLength() { // fix
+	static String checkLength() { // logic error when tempWord > 93
 		String str = scan.nextLine();
 		String tempWord = "";
 		char[] letters = str.toCharArray();

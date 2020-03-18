@@ -1,6 +1,11 @@
+/**
+ * @author: https://github.com/key6oardWarrior
+ */
+
 import static java.lang.System.*;
 import java.util.*;
 import java.io.*;
+import org.jsoup.*;
 
 class EnglishSources {
 	static Scanner scan = new Scanner(in);
@@ -11,7 +16,7 @@ class EnglishSources {
 			out.println(sources.get(i) + "\n");
 			sources.remove(i+1);
 		}
-		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brin O.");
+		out.print("Coded by key6oardWarrior (https://github.com/key6oardWarrior)");
 	}
 
 	static void organizeSources(int sourceNum) {

@@ -1,2 +1,2 @@
 # MLA Format Sources
-Organizes sources that would go on a source page of  an english paper.
+Organizes sources in MLA Format.

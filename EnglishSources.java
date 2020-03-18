@@ -11,30 +11,11 @@ class EnglishSources {
 			out.println(sources.get(i) + "\n");
 			sources.remove(i+1);
 		}
-		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brian O.");
-	}
-
-	static String checkLength() { // error when tempWord > 93
-		String str = scan.nextLine();
-		String tempWord = "";
-		char[] letters = str.toCharArray();
-
-		for(int i = 0; i < letters.length; i++) { // check each word < letterCnt
-			if(!(Character.isWhitespace(letters[i]))) {
-				tempWord += letters[i];
-			}
-
-			if(tempWord.length() > 93) {
-				tempWord = "";
-				out.print("ERROR: No words longer than 93 charters. Please reenter your source. ");
-				checkLength();
-			}
-		}
-		return str;
+		out.print("Coded by DeveloperJ.\nSpeical thanks to BCPS english teacher Ms. Ehmann & programmer Brin O.");
 	}
 
 	static void organizeSources(int sourceNum) {
-		ArrayList<String> sources = new ArrayList<String>(); // think about using dictionary to reduce time complexity
+		ArrayList<String> sources = new ArrayList<String>();
 		int letterCnt = 93;
 		String temp, copy = "";
 		String txt = "";
@@ -46,7 +27,7 @@ class EnglishSources {
 			} else {
 				out.print("What is source number " + i + "? ");
 			}
-			txt = checkLength();
+			txt = scan.nextLine();
 
 			sources.add(txt);
 			if(txt.length() > letterCnt) {
@@ -73,7 +54,7 @@ class EnglishSources {
 		displaySources(sources);
 	}
 
-	public static void giveDirections() {
+	public static void directions() {
 		int num = 0;
 
 		out.println("DIRECTIONS: Your font MUST be Calibri Body with a font size of 12.");
@@ -82,7 +63,7 @@ class EnglishSources {
 			num = scan.nextInt();
 		} catch(Exception e) {
 			out.println("\nERROR: Please only type numbers!\n");
-			giveDirections();
+			directions();
 		}
 
 		if(num > 1) {
@@ -94,6 +75,6 @@ class EnglishSources {
 	}
 
 	public static void main(String[] args) {
-		giveDirections();
+		directions();
 	}
 }

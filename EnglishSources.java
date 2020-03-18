@@ -5,7 +5,6 @@
 import static java.lang.System.*;
 import java.util.*;
 import java.io.*;
-import org.jsoup.*;
 
 class EnglishSources {
 	static Scanner scan = new Scanner(in);

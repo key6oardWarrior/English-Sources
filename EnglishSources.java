@@ -1,25 +1,24 @@
-/**
- * @author: https://github.com/key6oardWarrior
- */
+import static java.lang.System.out;
 
-import static java.lang.System.*;
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Collections;
 
-class EnglishSources {
-	static Scanner scan = new Scanner(in);
+public class EnglishSources {
+	private LinkedList<String> sources = new LinkedList<String>();
+	private Scanner scan = new Scanner(System.in);
 
-	static void displaySources(ArrayList<String> sources) {
+	private EnglishSources() {}
+
+	private void displaySources() {
 		Collections.sort(sources); // put sources in ABC order
 		for(int i = 0; i < sources.size(); i++) { // display sources in MLA format
 			out.println(sources.get(i) + "\n");
-			sources.remove(i+1);
+			i++;
 		}
-		out.print("Coded by key6oardWarrior (https://github.com/key6oardWarrior)");
 	}
 
-	static void organizeSources(int sourceNum) {
-		ArrayList<String> sources = new ArrayList<String>();
+	private void organizeSources(int sourceNum) {
 		int letterCnt = 93;
 		String temp, copy = "";
 		String txt = "";
@@ -36,9 +35,11 @@ class EnglishSources {
 			sources.add(txt);
 			if(txt.length() > letterCnt) {
 				temp = txt.substring(0, letterCnt); // get letters between txt.substring(0, letterCnt) and txt.substring(letterCnt)
+				
 				if(temp.substring(letterCnt).equals(" ")) {
 					sources.add(temp);
 				} else if(temp.length() == letterCnt) { // cut off word at " " instead of at a letter
+					
 					for(int j = letterCnt; j < txt.length(); j--) {
 						if(txt.substring(letterCnt-1, letterCnt).equals(" ")) {
 							temp = txt.substring(letterCnt);
@@ -55,14 +56,15 @@ class EnglishSources {
 				sources.add(txt);
 			}
 		}
-		displaySources(sources);
+		displaySources();
 	}
 
-	public static void directions() {
+	private void directions() {
 		int num = 0;
 
 		out.println("DIRECTIONS: Your font MUST be Calibri Body with a font size of 12.");
 		out.print("How many sources do you have? You MUST type a number! ");
+
 		try { // if user enters text handles error
 			num = scan.nextInt();
 		} catch(Exception e) {
@@ -79,6 +81,7 @@ class EnglishSources {
 	}
 
 	public static void main(String[] args) {
-		directions();
+		EnglishSources eng = new EnglishSources();
+		eng.directions();
 	}
 }

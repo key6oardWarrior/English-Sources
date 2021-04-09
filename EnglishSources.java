@@ -59,23 +59,29 @@ public class EnglishSources {
 		displaySources();
 	}
 
-	private void directions() {
-		int num = 0;
+	private boolean isNum(String strNum) {
+		try {
+			Integer.parseInt(strNum);
+		} catch(NumberFormatException nfe) {
+			return false;
+		}
+		return true;
+	}
 
+	private void directions() {
 		out.println("DIRECTIONS: Your font MUST be Calibri Body with a font size of 12.");
 		out.print("How many sources do you have? You MUST type a number! ");
 
-		try { // if user enters text handles error
-			num = scan.nextInt();
-		} catch(Exception e) {
-			out.println("\nERROR: Please only type numbers!\n");
-			directions();
+		String strNum = scan.nextLine();
+		while(isNum(strNum) == false) {
+			out.print("Please only type numbers ");
+			strNum = scan.nextLine();
 		}
 
-		if(num > 1) {
+		int num = Integer.parseInt(strNum);
+
+		if(num >= 1) {
 			out.print("\nPlease enter you sources ONE at a time!\n");
-			organizeSources(num);
-		} else {
 			organizeSources(num);
 		}
 	}
